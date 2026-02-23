@@ -8,8 +8,11 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+import { handleUserRoutes } from "./routes/userRoutes";
+
 export default {
 	async fetch(request, env, ctx) {
-		return new Response('Hello World!');
+		// return new Response('Hello World!');
+		return handleUserRoutes(request)
 	},
 };
